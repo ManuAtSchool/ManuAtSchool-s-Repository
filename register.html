@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrazione Studente</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Registrati</h1>
+  <form id="registration-form" novalidate>
+    <div class="field">
+      <input type="text" id="nome" placeholder="Nome" required>
+      <p class="error-msg" id="err-nome"></p>
+    </div>
+    <div class="field">
+      <input type="text" id="cognome" placeholder="Cognome" required>
+      <p class="error-msg" id="err-cognome"></p>
+    </div>
+    <div class="field">
+      <input type="date" id="dataNascita" required>
+      <p class="error-msg" id="err-dataNascita"></p>
+    </div>
+    <div class="field">
+      <input type="email" id="email" placeholder="Email" required>
+      <p class="error-msg" id="err-email"></p>
+    </div>
+    <div class="field">
+      <select id="corso" required>
+        <option value="">-- Seleziona Corso --</option>
+        <option value="Informatica">Informatica</option>
+        <option value="Matematica">Matematica</option>
+        <option value="Fisica">Fisica</option>
+      </select>
+      <p class="error-msg" id="err-corso"></p>
+    </div>
+    <button type="submit">Registrati</button>
+  </form>
+  <a href="index.html">🏠 Torna alla Home</a>
+  <script src="script.js"></script>
+</body>
+</html>

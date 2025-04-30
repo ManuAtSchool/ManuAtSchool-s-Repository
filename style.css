@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --bg1: #365257;
+  --bg2: #696aa3;
+  --primary: #3bc3db;
+  --secondary: #4facfe;
+  --error: #ff6b6b;
+  --text-light: #79dbec;
+  --card-bg: rgba(82, 126, 207, 0.05);
+  --blur: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  overflow-x: hidden;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 10px #000;
+  animation: slideInDown 1s ease;
+}
+
+form, .student-list {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  backdrop-filter: blur(var(--blur));
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: rgba(23, 64, 175, 0.15);
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 12px var(--primary);
+  background: rgba(42, 47, 116, 0.15);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 20px var(--secondary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 30px var(--primary);
+}
+
+a {
+  margin-top: 25px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+.field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.error-msg {
+  color: var(--error);
+  font-size: 0.85rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.error-msg.active {
+  display: block;
+}
+
+input.error-border, select.error-border {
+  border: 2px solid var(--error);
+  animation: shake 0.3s ease;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  list-style: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+li:hover {
+  transform: scale(1.02);
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideInDown {
+  from {opacity: 0; transform: translateY(-50px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.delete-btn {
+  margin-left: 0px;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff4b2b;
+  transition: all 0.3s ease-in-out;
+}
+
+.delete-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff4b2b;
+}
+
+.removing {
+  animation: fadeOutZoom 0.5s forwards;
+}
+
+@keyframes fadeOutZoom {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.6); height: 0; margin: 0; padding: 0; }
+}
